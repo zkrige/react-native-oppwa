@@ -1,4 +1,4 @@
-package org.oppwa;
+package com.oppwa;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -27,8 +27,7 @@ public class RNOppwaPackage implements ReactPackage {
     }
 
     @Override
-    public List<NativeModule> createNativeModules(
-            ReactApplicationContext reactContext) {
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new RNOppwaModule(reactContext));
         return modules;

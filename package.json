@@ -1,11 +1,11 @@
 {
   "name": "react-native-oppwa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React Native library for Oppwa",
   "main": "index",
   "rnpm": {
     "android": {
-      "packageInstance": "new OppwaPackage()"
+      "packageInstance": "new RNOppwaPackage()"
     }
   },
   "scripts": {
