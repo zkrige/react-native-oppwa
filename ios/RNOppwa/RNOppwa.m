@@ -7,25 +7,57 @@ OPPPaymentProvider *provider;
 RCT_EXPORT_MODULE(RNOppwa);
 
 
--(instancetype)init
-{
-    self = [super init];
-    if (self) {
-      #ifdef DEBUG
+/**
+ * transaction
+ */
+RCT_EXPORT_METHOD(setup: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    NSString *mode = options[@"mode"];
+    mode = [mode lowercaseString];
+    if ([mode isEqualToString:@"live"]) {
         provider = [OPPPaymentProvider paymentProviderWithMode:OPPProviderModeLive];
-     #else
-        provider = [OPPPaymentProvider paymentProviderWithMode:OPPProviderModeLive];
-     #endif
+    } else {
+        provider = [OPPPaymentProvider paymentProviderWithMode:OPPProviderModeTest];
     }
-    
-    return self;
 }
+
+/**
+ * tokenize card
+ */
+RCT_EXPORT_METHOD(tokenizeCard: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    NSString *checkoutID = options[@"checkoutID"];
+    OPPCheckoutSettings *checkoutSettings = [[OPPCheckoutSettings alloc] init];
+
+    // Set available payment brands for your shop
+    checkoutSettings.paymentBrands = @[@"VISA", @"MASTER", @"PAYPAL"];
+
+    // Set shopper result URL
+    checkoutSettings.shopperResultURL = @"za.co.shop2shop.payments://result";
+    OPPCheckoutProvider *checkoutProvider = [OPPCheckoutProvider checkoutProviderWithPaymentProvider:provider
+                                                                                          checkoutID:checkoutID
+                                                                                            settings:checkoutSettings];
+    [checkoutProvider presentCheckoutForSubmittingTransactionCompletionHandler:^(OPPTransaction * _Nullable transaction, NSError * _Nullable error) {
+        if (error) {
+            reject(@"oppwa/checkout error", error.localizedDescription, error);
+            // Executed in case of failure of the transaction for any reason
+        } else if (transaction.type == OPPTransactionTypeSynchronous)  {
+            // Send request to your server to obtain the status of the synchronous transaction
+            // You can use transaction.resourcePath or just checkout id to do it
+            resolve(transaction.resourcePath);
+        } else {
+            // The SDK opens transaction.redirectUrl in a browser
+            // See 'Asynchronous Payments' guide for more details
+        }
+    } cancelHandler:^{
+        reject(@"oppwa/cancelled", @"cancelled", nil);
+    }];
+}
+
 
 /**
  * transaction
  */
 RCT_EXPORT_METHOD(transactionPayment: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    
+
     NSError * _Nullable error;
    
     
@@ -56,21 +88,6 @@ RCT_EXPORT_METHOD(transactionPayment: (NSDictionary*)options resolver:(RCTPromis
         }
       }];
     }
-}
-/**
- * validate number
- * @return
- */
-RCT_EXPORT_METHOD(isValidNumber:
-            (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-
-        
-        if ([OPPCardPaymentParams isNumberValid:[options valueForKey:@"cardNumber"] forPaymentBrand:[options valueForKey:@"paymentBrand"]]) {
-            resolve([NSNull null]);
-        }
-        else {
-           reject(@"oppwa/card-invalid", @"The card number is invalid.", nil);
-        }
 }
 
 + (BOOL)requiresMainQueueSetup
