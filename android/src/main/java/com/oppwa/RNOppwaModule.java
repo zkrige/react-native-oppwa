@@ -172,9 +172,6 @@ public class RNOppwaModule extends ReactContextBaseJavaModule  {
      */
     private static CheckoutSettings createCheckoutSettings(String checkoutId, String callbackScheme, Connect.ProviderMode providerMode) {
         return new CheckoutSettings(checkoutId, Constants.Config.PAYMENT_BRANDS, providerMode)
-//                .setSkipCVVMode(CheckoutSkipCVVMode.FOR_STORED_CARDS)
-//                .setWindowSecurityEnabled(false)
-                .setEntityId("8a8294175ec8f9a5015ecca277190c84")
                 .setWebViewEnabledFor3DSecure(true)
                 .setShopperResultUrl(callbackScheme + "://callback")
                 .setStorePaymentDetailsMode(CheckoutStorePaymentDetailsMode.PROMPT);
