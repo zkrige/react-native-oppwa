@@ -8,7 +8,7 @@ RCT_EXPORT_MODULE(RNOppwa);
 
 
 /**
- * transaction
+ * setup
  */
 RCT_EXPORT_METHOD(setup: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     NSString *mode = options[@"mode"];
@@ -24,6 +24,11 @@ RCT_EXPORT_METHOD(setup: (NSDictionary*)options resolver:(RCTPromiseResolveBlock
  * tokenize card
  */
 RCT_EXPORT_METHOD(tokenizeCard: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    if (provider == nil) {
+        reject(@"oppwa/setup", @"please call setup first", nil);
+        return;
+    }
+
     NSString *checkoutID = options[@"checkoutID"];
     OPPCheckoutSettings *checkoutSettings = [[OPPCheckoutSettings alloc] init];
 
@@ -57,6 +62,11 @@ RCT_EXPORT_METHOD(tokenizeCard: (NSDictionary*)options resolver:(RCTPromiseResol
  * transaction
  */
 RCT_EXPORT_METHOD(transactionPayment: (NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+
+    if (provider == nil) {
+        reject(@"oppwa/setup", @"please call setup first", nil);
+        return;
+    }
 
     NSError * _Nullable error;
    

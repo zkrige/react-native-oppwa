@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3BDE5E592153E98B0053C285 /* OPPWAMobile-Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE5E582153E98B0053C285 /* OPPWAMobile-Resources.bundle */; };
-		3BDE5E5C2153EBC10053C285 /* OPPWAMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDE5E5A2153EBC10053C285 /* OPPWAMobile.framework */; };
-		3BDE5E5D2153EBC10053C285 /* OPPWAMobile-CardIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDE5E5B2153EBC10053C285 /* OPPWAMobile-CardIO.framework */; };
 		6463C8561EBA12CB0095B8CD /* RNOppwa.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A76C21C86A251004ABB23 /* RNOppwa.m */; };
 		D87A76C41C86A251004ABB23 /* RNOppwa.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A76C21C86A251004ABB23 /* RNOppwa.m */; };
 /* End PBXBuildFile section */
@@ -36,12 +33,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3BDE5E522153E9740053C285 /* OPPWAMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OPPWAMobile.framework; path = ../../../../oppwa/ios/RNOppwa/OPPWAMobile.framework; sourceTree = "<group>"; };
-		3BDE5E532153E9740053C285 /* OPPWAMobile-CardIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OPPWAMobile-CardIO.framework"; path = "../../../../oppwa/ios/RNOppwa/OPPWAMobile-CardIO.framework"; sourceTree = "<group>"; };
-		3BDE5E562153E9800053C285 /* OPPWAMobile-Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "OPPWAMobile-Resources.bundle"; path = "../../../../oppwa/ios/RNOppwa/OPPWAMobile-Resources.bundle"; sourceTree = "<group>"; };
-		3BDE5E582153E98B0053C285 /* OPPWAMobile-Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "OPPWAMobile-Resources.bundle"; sourceTree = "<group>"; };
-		3BDE5E5A2153EBC10053C285 /* OPPWAMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OPPWAMobile.framework; sourceTree = "<group>"; };
-		3BDE5E5B2153EBC10053C285 /* OPPWAMobile-CardIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OPPWAMobile-CardIO.framework"; sourceTree = "<group>"; };
 		6463C84C1EBA12A60095B8CD /* libRNOppwa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNOppwa.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A76C11C86A251004ABB23 /* RNOppwa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNOppwa.h; path = RNOppwa/RNOppwa.h; sourceTree = "<group>"; };
 		D87A76C21C86A251004ABB23 /* RNOppwa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNOppwa.m; path = RNOppwa/RNOppwa.m; sourceTree = "<group>"; };
@@ -60,8 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BDE5E5C2153EBC10053C285 /* OPPWAMobile.framework in Frameworks */,
-				3BDE5E5D2153EBC10053C285 /* OPPWAMobile-CardIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,10 +60,6 @@
 		3BDE5E512153E9740053C285 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3BDE5E5B2153EBC10053C285 /* OPPWAMobile-CardIO.framework */,
-				3BDE5E5A2153EBC10053C285 /* OPPWAMobile.framework */,
-				3BDE5E532153E9740053C285 /* OPPWAMobile-CardIO.framework */,
-				3BDE5E522153E9740053C285 /* OPPWAMobile.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,8 +67,6 @@
 		D8D9DB5B1C6D01F4009FBC0E = {
 			isa = PBXGroup;
 			children = (
-				3BDE5E562153E9800053C285 /* OPPWAMobile-Resources.bundle */,
-				3BDE5E582153E98B0053C285 /* OPPWAMobile-Resources.bundle */,
 				D87A76C11C86A251004ABB23 /* RNOppwa.h */,
 				D87A76C21C86A251004ABB23 /* RNOppwa.m */,
 				D8D9DB661C6D01F4009FBC0E /* Products */,
@@ -179,7 +162,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BDE5E592153E98B0053C285 /* OPPWAMobile-Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +241,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -282,7 +263,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -314,7 +295,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -331,7 +311,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,7 +324,14 @@
 		D8D9DB8A1C6D03DB009FBC0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					"\"$(PROJECT_DIR)\"",
+					"\"$(SRCROOT)/../../../ios/Oppwa\"",
+					"\"$(SRCROOT)/../../../ios/Pods/Oppwa/iOS\"",
+					"\"$(SRCROOT)/../../../ios/\"",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -361,7 +348,14 @@
 		D8D9DB8B1C6D03DB009FBC0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					"\"$(PROJECT_DIR)\"",
+					"\"$(SRCROOT)/../../../ios/Oppwa\"",
+					"\"$(SRCROOT)/../../../ios/Pods/Oppwa/iOS\"",
+					"\"$(SRCROOT)/../../../ios/\"",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
