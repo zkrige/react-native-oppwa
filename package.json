@@ -1,6 +1,6 @@
 {
   "name": "react-native-oppwa",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A React Native library for Oppwa",
   "main": "index",
   "rnpm": {
@@ -22,16 +22,16 @@
     "oppwa"
   ],
   "author": {
-    "name": "Mohamed Anouar Kotti",
-    "email": "kottianouar@gmail.com"
+    "name": "Zayin Krige",
+    "email": "zkrige@gmail.com"
   },
-  "homepage": "https://github.com/kottiDev/react-native-oppwa",
+  "homepage": "https://github.com/zkrige/react-native-oppwa",
   "bugs": {
-    "url": "https://github.com/kottiDev/react-native-oppwa/issues"
+    "url": "https://github.com/zkrige/react-native-oppwa/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kottiDev/react-native-oppwa.git"
+    "url": "git://github.com/zkrige/react-native-oppwa.git"
   },
   "license": "MIT"
 }
